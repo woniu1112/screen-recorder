@@ -4,7 +4,8 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package": "electron-packager . app --platform=win32 --arch=x64 --icon=app/icon/icon.ico --out=./dist --asar --app-version=1.0.0 --ignore=\"(dist|docs|.gitignore|LICENSE|README.md|webpack.config*|node_modules)\""
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -21,5 +22,16 @@
   },
   "dependencies": {
     "vue": "^2.6.12"
+  },
+  "build": {
+    "win": {
+      "icon": "./app/icon/icon.ico"
+    },
+    "mac": {
+      "icon": "./app/icon/icon.icns"
+    },
+    "linux": {
+      "icon": "./app/icon"
+    }
   }
 }
