@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <title>Hello World!</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <video id="showVideo" src="" autoplay width="200" height="150"></video>
+    <div>
+      <button id="recorde">录制</button>
+      <button id="stop">停止</button>
+    </div>
+  </div>
+  <script src="./renderer.js"></script>
+</body>
+
+</html>
