@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Menu } = require('electron')
 const path = require('path')
 
 function createWindow () {
@@ -9,15 +9,69 @@ function createWindow () {
     height: 500,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: true
+      nodeIntegration: true,
+      contextIsolation: false
     }
   })
 
   // and load the index.html of the app.
   mainWindow.loadFile('app/index.html')
 
+  // ipcMain.on('new-window', function () {
+  //   mainWindow.loadURL(url.format({
+  //     pathname: path.join(__dirname, '/app/help.html'),
+  //     protocol: 'file:',
+  //     slashes: true
+  //   }))
+  // })
+
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
+}
+
+function createMenu () {
+  const dockMenu = Menu.buildFromTemplate([
+    {
+      label: 'file',
+      submenu: [
+        {
+          label: 'quit',
+          accelerator: 'Shift+Ctrl+Q',
+          click () {
+            app.quit()
+          }
+        }
+      ]
+    },
+    {
+      label: 'help',
+      submenu: [
+        {
+          label: '联系作者',
+          submenu: [
+            {
+              label: '简书',
+              click () {
+                const { shell } = require('electron')
+                shell.openExternal('https://www.jianshu.com/u/bfea62dd0faf')
+              }
+            },
+            {
+              label: 'github',
+              click () {
+                const { shell } = require('electron')
+                shell.openExternal('https://github.com/woniu1112')
+              }
+            },
+            {
+              label: 'syl18188@163.com'
+            }
+          ]
+        }
+      ]
+    }
+  ])
+  Menu.setApplicationMenu(dockMenu)
 }
 
 // This method will be called when Electron has finished
@@ -25,7 +79,7 @@ function createWindow () {
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
   createWindow()
-
+  createMenu()
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.

@@ -42,7 +42,6 @@ recorde.addEventListener('click', async function () {
         { name: 'Custom File Type', extensions: ['webm'] },
       ]
     })
-    console.log(path)
     fs.writeFileSync(path, new Uint8Array(await e.data.arrayBuffer()))
   }
   _recorder.start()
