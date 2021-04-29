@@ -1,9 +1,4 @@
-# electron screen-recorder
+# screen-recorder
 
-> this is a screen recorder tool
-
-```
-npm install
-
-npm start
-```
+> This is a screen recorder tool
+> 录屏软件，可以用来录制自己的讲课视频
