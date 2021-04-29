@@ -16,3 +16,9 @@ button[disabled] {
   height: 300px;
   object-fit:fill;
 }
+#setSeclect {
+  border-radius: 4px;
+  margin: 10px 0;
+  height: 33px;
+  width: 112px;
+}

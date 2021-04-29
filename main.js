@@ -32,10 +32,10 @@ function createWindow () {
 function createMenu () {
   const dockMenu = Menu.buildFromTemplate([
     {
-      label: 'file',
+      label: '文件',
       submenu: [
         {
-          label: 'quit',
+          label: '退出',
           accelerator: 'Shift+Ctrl+Q',
           click () {
             app.quit()
@@ -44,7 +44,7 @@ function createMenu () {
       ]
     },
     {
-      label: 'help',
+      label: '帮助',
       submenu: [
         {
           label: '联系作者',
@@ -64,7 +64,11 @@ function createMenu () {
               }
             },
             {
-              label: 'syl18188@163.com'
+              label: 'syl18188@163.com',
+              click () {
+                const { shell } = require('electron')
+                shell.openExternal('https://mail.163.com/')
+              }
             }
           ]
         }
