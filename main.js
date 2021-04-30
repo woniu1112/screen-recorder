@@ -7,6 +7,8 @@ function createWindow () {
   const mainWindow = new BrowserWindow({
     width: 600,
     height: 500,
+    maxWidth: 600,
+    maxHeight: 500,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,
@@ -16,6 +18,7 @@ function createWindow () {
 
   // and load the index.html of the app.
   mainWindow.loadFile('app/index.html')
+  mainWindow.setAspectRatio(1.5)
 
   // ipcMain.on('new-window', function () {
   //   mainWindow.loadURL(url.format({

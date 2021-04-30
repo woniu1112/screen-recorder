@@ -13,7 +13,7 @@ button[disabled] {
 }
 #showVideo {
   width: 100%;
-  height: 50vw;
+  height: 300px;
   object-fit:fill;
 }
 #setSeclect {
