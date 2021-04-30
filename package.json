@@ -6,7 +6,8 @@
   "scripts": {
     "start": "electron .",
     "package": "electron-packager . screen-recorder --platform=win32 --arch=x64 --icon=app/icon/icon.ico --out=./dist --app-version=1.0.0 --asar --ignore=\"(dist|docs|.gitignore|LICENSE|README.md|webpack.config*|node_modules)\"",
-    "packageDarwin": "electron-packager . screen-recorder --platform=darwin --arch=x64 --icon=app/icon/icon.icns --out=./distDarwin --asar --app-version=1.0.0 --ignore=\"(dist|docs|.gitignore|LICENSE|README.md|webpack.config*|node_modules)\""
+    "packageDarwin": "electron-packager . screen-recorder --platform=darwin --arch=x64 --icon=app/icon/icon.icns --out=./distDarwin --asar --app-version=1.0.0 --ignore=\"(dist|docs|.gitignore|LICENSE|README.md|webpack.config*|node_modules)\"",
+    "packageLinux": "electron-packager . screen-recorder --platform=linux --arch=x64 --icon=app/icon/icon.ico --out=./distLinux --asar --app-version=1.0.0 --ignore=\"(dist|docs|.gitignore|LICENSE|README.md|webpack.config*|node_modules)\""
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
