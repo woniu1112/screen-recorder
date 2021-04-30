@@ -57,13 +57,6 @@ function createMenu () {
               }
             },
             {
-              label: 'github',
-              click () {
-                const { shell } = require('electron')
-                shell.openExternal('https://github.com/woniu1112')
-              }
-            },
-            {
               label: 'syl18188@163.com',
               click () {
                 const { shell } = require('electron')
